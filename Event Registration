@@ -1,0 +1,32 @@
+registered_guests = [
+    "Alice",
+    "Bob"
+]
+
+checked_in_guests = []
+
+# TODO 1: Continue until all registered guests are checked in
+while len(checked_in_guests) < len(registered_guests):
+
+    # TODO 2: Ask the user to enter their name
+    guest_name = input("What is your name: ")
+
+    # TODO 3: Check whether their name appears in registered guests
+    if guest_name in registered_guests:
+
+        # TODO 4: Check that they are not already checked in
+        if guest_name not in checked_in_guests:
+            checked_in_guests.append(guest_name)
+            print("Welcome", guest_name, "!")
+        else:
+            print(guest_name, "is already checked in.")
+
+    # TODO 5: Message for unregistered guests
+    else:
+        print("Sorry", guest_name, "your name isn't on the list.")
+
+    # TODO 6: Print updated checked-in list
+    print("Checked In Guests:", checked_in_guests)
+
+# TODO 7
+print("All guests have been checked in!")
