@@ -1,0 +1,38 @@
+temperatures = [18, 22, 25, 19, 27, 24, 16]
+
+# TODO 0
+totalTemperature = 0
+daysAbove23 = 0
+hottestDay = -1
+highestTemperature = temperatures[0]
+
+# TODO 1: Iterate through every recorded temperature
+for index in range(len(temperatures)):
+
+    temperature = temperatures[index]
+
+    # TODO 2: Print recorded temperature
+    print("Recorded Temperature:", temperature)
+
+    # TODO 3: Add temperature to total
+    totalTemperature = totalTemperature + temperature
+
+    # TODO 4: Count days above 23
+    if temperature > 23:
+        daysAbove23 = daysAbove23 + 1
+
+    # Find hottest temperature and its index
+    if temperature > highestTemperature:
+        highestTemperature = temperature
+        hottestDay = index
+
+# TODO 5: Calculate average
+averageTemperature = totalTemperature / len(temperatures)
+
+print("Average Temperature:", round(averageTemperature, 2))
+
+# TODO 6
+print("Days Above 23:", daysAbove23)
+
+# TODO 7
+print("Highest Temperature Index:", hottestDay)
