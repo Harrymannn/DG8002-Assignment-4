@@ -1,0 +1,35 @@
+# TODO 1: Print entire menu
+print("MENU")
+
+for item in menu:
+    print(item, "- $", menu[item])
+
+# TODO 2: Start a loop
+while True:
+    customerChoice = input("Which item would you like to order? ")
+
+    # TODO 5: End order when customer types Done
+    if customerChoice == "Done":
+        break
+
+    # TODO 3: Check whether requested item exists
+    if customerChoice in menu:
+
+        # TODO 4: Add valid item
+        order.append(customerChoice)
+        print(customerChoice, "added to your order.")
+
+    else:
+        print("Sorry, that item is not on the menu.")
+
+# TODO 6: Print itemized receipt
+print("Order:")
+
+subtotal = 0
+
+for item in order:
+    print(item, "- $", menu[item])
+    subtotal = subtotal + menu[item]
+
+# TODO 7: Print subtotal
+print("TOTAL: $", round(subtotal, 2))
