@@ -1,0 +1,32 @@
+# TODO 1: Create inputs for the following information
+savingsGoal = float(input("Enter your desired savings goal: $"))
+baseInvestment = float(input("Enter your base investment: $"))
+annualInterestRate = float(input("Enter the annual interest rate (%): "))
+monthlyDeposit = float(input("Enter your monthly deposit: $"))
+
+# Convert percentage to decimal
+annualInterestRate = annualInterestRate / 100
+
+# TODO 2: Create variables to hold number of months and current balance
+numberOfMonths = 0
+currentBalance = baseInvestment
+
+# TODO 3: Create a loop that will run until you have made at least your desired savings goal
+while currentBalance < savingsGoal:
+
+    # TODO 4: Calculate amount earned that month through interest
+    monthlyInterest = currentBalance * (annualInterestRate / 12)
+    currentBalance = currentBalance + monthlyInterest + monthlyDeposit
+
+    # TODO 5: Increment number of months
+    numberOfMonths = numberOfMonths + 1
+
+# TODO 6: Print how long it will take
+if numberOfMonths > 12:
+    numberOfYears = numberOfMonths / 12
+    print("Number of Months:", numberOfMonths)
+    print("Number of Years:", round(numberOfYears, 2))
+else:
+    print("Number of Months:", numberOfMonths)
+
+print("Total Investment: $", round(currentBalance, 2))
